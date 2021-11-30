@@ -20,10 +20,10 @@
           Hello, {{ user.username }}!
           <a href="{% url 'auth_logout' %}">Log Out</a>
         </div>
-        {% endif %}
       <div class="mr2 b">
         <a href={% url 'todays_mealplan' %} class="f6 link dim br2 ba bw2 ph3 pv2 mb2 dib black">Today's MealPlan</a>
       </div>
+        {% endif %}
     </div>
     </header>
     <main class="pa3">
