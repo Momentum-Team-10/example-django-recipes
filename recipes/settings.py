@@ -48,10 +48,14 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # third-party apps
     "django_extensions",
     "debug_toolbar",
     "ordered_model",
+    "rest_framework",
+    # own apps
     "core",
+    "api",
 ]
 
 MIDDLEWARE = [
