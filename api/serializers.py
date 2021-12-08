@@ -1,10 +1,17 @@
 from rest_framework import serializers
-from core.models import Recipe
+from core.models import Recipe, Ingredient
+
+
+class IngredientSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Ingredient
+        fields = ("pk", "recipe", "amount", "item")
 
 
 class RecipeSerializer(serializers.ModelSerializer):
     author = serializers.StringRelatedField()
     tags = serializers.SlugRelatedField(read_only=True, many=True, slug_field="tag")
+    ingredients = IngredientSerializer(many=True)
 
     class Meta:
         model = Recipe
@@ -18,4 +25,5 @@ class RecipeSerializer(serializers.ModelSerializer):
             "public",
             "favorited_by",
             "tags",
+            "ingredients",
         )
