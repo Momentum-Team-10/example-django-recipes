@@ -3,6 +3,9 @@ from core.models import Recipe
 
 
 class RecipeSerializer(serializers.ModelSerializer):
+    author = serializers.StringRelatedField()
+    tags = serializers.SlugRelatedField(read_only=True, many=True, slug_field="tag")
+
     class Meta:
         model = Recipe
         fields = (
