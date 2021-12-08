@@ -9,6 +9,7 @@ class RecipeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Recipe
         fields = (
+            "pk",
             "author",
             "title",
             "prep_time_in_minutes",
