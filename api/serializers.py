@@ -8,10 +8,16 @@ class IngredientSerializer(serializers.ModelSerializer):
         fields = ("pk", "recipe", "amount", "item")
 
 
+class IngredientForRecipeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Ingredient
+        fields = ("pk", "amount", "item")
+
+
 class RecipeSerializer(serializers.ModelSerializer):
     author = serializers.StringRelatedField()
     tags = serializers.SlugRelatedField(read_only=True, many=True, slug_field="tag")
-    ingredients = IngredientSerializer(many=True)
+    ingredients = IngredientForRecipeSerializer(many=True)
 
     class Meta:
         model = Recipe
