@@ -26,5 +26,9 @@ class RecipeListView(ListAPIView):
 
 
 class RecipeDetailView(RetrieveAPIView):
+    """
+    Get a single recipe
+    """
+
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer

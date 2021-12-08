@@ -148,6 +148,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# This line is needed when you add a custom user model
 AUTH_USER_MODEL = "core.User"
 
 # https://docs.djangoproject.com/en/3.2/topics/logging/
